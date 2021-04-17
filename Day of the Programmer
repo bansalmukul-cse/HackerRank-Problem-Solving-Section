@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int yy,t=13;
+    cin>>yy;
+    if(yy==1918)
+     t=26;
+     
+     else if(yy<1918)
+     {
+         if(yy%4==0)
+           t=12;
+     }
+     else
+     if(yy>1918)
+     {
+         if(yy%400==0 || (yy%4==0 && yy%100!=0))
+         {
+             t=12;
+         }
+     }
+     
+     cout<<t<<"."<<"09"<<"."<<yy;
+     return 0;
+}
