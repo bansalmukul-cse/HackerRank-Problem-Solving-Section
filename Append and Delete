@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char s[100],t[100];
+    int k,x,y,p=0,q;
+    scanf("%s",s);
+    scanf("%s",t);
+    scanf("%d",&k);
+    x=strlen(s);
+    y=strlen(t);
+    if(x>y)
+    q=x;
+    else {
+    q=y;
+    }
+    for(int i=0;i<q;i++)
+    {
+       if(s[i]==t[i])
+       p++;
+       else {
+       break;
+       }
+        
+    }
+    if(x+y<=k)
+    printf("Yes");
+    else if(k-(x+y-2*p)>=0)
+    {
+        if((k-(x+y-2*p))%2==0)
+        printf("Yes");
+        else {
+        printf("No");
+        }
+        
+    }
+    else
+    {
+        printf("No");
+    }
+    return 0;
+}
