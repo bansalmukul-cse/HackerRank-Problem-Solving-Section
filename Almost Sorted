@@ -1,0 +1,45 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'almostSorted' function below.
+#
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def almostSorted(arr):
+    sortarr=arr.copy()
+    sortarr.sort()
+    unsortcount=0
+    indx=[]
+    for i in range(0,len(sortarr)):
+        if sortarr[i]!=arr[i]:
+            unsortcount=unsortcount+1
+            indx.append(i)
+    if unsortcount==2:
+        arr[indx[0]],arr[indx[1]]=arr[indx[1]],arr[indx[0]]
+        if arr==sortarr:
+            print("yes")
+            print("swap",indx[0]+1,indx[1]+1)
+    else:
+        ival=indx[0]
+        fval=indx[-1]
+        arr[ival:fval+1]=arr[fval:ival-1:-1]
+        if arr==sortarr:
+            print("yes")
+            print("reverse",ival+1,fval+1)
+        else:
+            print("no")
+    # Write your code here
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    almostSorted(arr)
