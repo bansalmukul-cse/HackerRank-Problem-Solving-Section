@@ -1,3 +1,5 @@
+//c solution of hackerank
+
 #include<stdio.h>
 #include<string.h>
 int main()
