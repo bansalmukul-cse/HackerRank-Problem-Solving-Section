@@ -11,7 +11,7 @@
 char* readline();
 char** split_string(char*);
 
-// Complete the hourglassSum function below.
+
 int hourglassSum(int arr_rows, int arr_columns, int** arr) {
 int sum = 0,max = -63;
 
